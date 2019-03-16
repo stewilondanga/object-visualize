@@ -52,22 +52,27 @@ Vue.component('v-input', {
   }
 });
 
-/*
+
 Vue.component('console', {
   template: "\n<div class=\"card console\">\n  <div class=\"console-brand\"><span v-html=\"watermark\" v-if=\"!hideWatermark\"></span></div>\n  <div v-for=\"(line, i) in lines\" class=\"mb-1\">\n    {{line.split(' ').join('&nbsp;')}}\n  </div>\n</div>",
   props: {
     hideWatermark: false,
-    text: String },
+    text: String
+  },
 
-  data: function () {return {
-      watermark: "Built with codepen <i class=\"fa fa-codepen\"></i>" };
+  data: function() {
+    return {
+      watermark: "Built with codepen <i class=\"fa fa-codepen\"></i>"
+    };
   },
   computed: {
-    lines: function () {
+    lines: function() {
       return this.text.split('\n');
-    } } });
+    }
+  }
+});
 
-
+/*
 Vue.component('builder-alert', {
   template: "\n<div>\n  <div class=\"alert\" :class=\"isEmpty ? 'alert-info' : isValid ? 'alert-success' : 'alert-danger'\" role=\"alert\">\n    <h5 class=\"alert-heading\">{{ isEmpty ? '' : isValid ? 'Looks Good! \uD83C\uDF89' : 'Oops \uD83D\uDE13' }}</h5>\n    <p v-html=\"message\"></p>\n    <hr v-if=\"!isValid\">\n    <p v-if=\"!isValid\" class=\"mb-0\">Make sure that the <b>property name</b> is <b>not empty</b> and that <b>string values</b> and <b>nested properties</b> names are wrapped in <b>double quotes</b>.</p>\n  </div>\n</div>\n",
   props: {
