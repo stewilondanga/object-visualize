@@ -17,10 +17,11 @@ body {
   height: 1.5em;
 }
 
-/*label {
+label {
   font-weight: bold;
 }
-.card {
+
+/*.card {
   display: block;
   border-radius: 2px;
   min-width: 0;
