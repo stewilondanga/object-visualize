@@ -18,7 +18,7 @@ var __assign = this && this.__assign || Object.assign || function(t) {
   window.CP.exitedLoop(0);
   return t;
 };
-/*var foo = {
+var foo = {
   id: 12345,
   active: true,
   deleted: false,
@@ -28,11 +28,13 @@ var __assign = this && this.__assign || Object.assign || function(t) {
   address: {
     street: "123 Manila Bay Road",
     suburb: "Intramuros",
-    city: "Manila" },
+    city: "Manila"
+  },
 
-  tags: [1, 2, 3, 4, 5] };
+  tags: [1, 2, 3, 4, 5]
+};
 
-var entityEncode = function (value) {
+/*var entityEncode = function (value) {
   return $('<div/>').text(value).html();
 };
 Vue.component('v-input', {
