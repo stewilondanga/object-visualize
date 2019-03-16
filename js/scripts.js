@@ -129,67 +129,70 @@ Vue.component('property-explorer', {
   }
 });
 
-/*
+
 Vue.component('builder', {
   template: "\n<div>\n  <div class=\"container card builder\">\n    <div class=\"row\">\n      <div class=\"col left\">\n        <label>Add Property:</label>\n        <div class=\"form-inline\">\n          <div class=\"mr-1\">\n            <v-input placeholder=\"Property name\"\n                   v-model=\"propertyName\"/>\n          </div>\n          <div class=\"mr-1\">\n            <v-input placeholder=\"Property value\"\n                   :hasErrors=\"!validPropertyValue\"\n                   v-model=\"propertyValue\"/>\n          </div>\n          <button type=\"button\" class=\"btn btn-info\" @click=\"addProperty\" :disabled=\"!canAdd\"><i class=\"fa fa-plus\"></i></button>\n        </div>\n        <builder-alert class=\"mt-3 mb-2\"\n                       :name=\"propertyName\"\n                       :validName=\"validPropertyName\"\n                       :value=\"propertyValue\"\n                       :validValue=\"validPropertyValue\"></builder-alert>\n        <label>Object properties:</label>\n        <div class=\"row pr-3 pt-1 pl-3\">\n          <div class=\"m-1\" v-for=\"(value, key) in foo\">\n            <button class=\"btn badge badge-secondary p-2\"\n                    data-toggle=\"modal\" data-target=\"#modal\"\n                    @click=\"selectProperty(key)\">{{key}} <i class=\"fa fa-external-link\"></i></button>\n          </div>\n        </div>\n      </div>\n      <div class=\"col console-wrapper\">\n          <console :text=\"jsonObject\" class=\"json-console\"></console>\n      </div>\n    </div>\n  </div>\n  <property-explorer :name=\"selectedProp\" :value=\"foo[selectedProp]\" @remove=\"removeProperty($event)\"></property-explorer>\n</div>",
-  data: function () {return {
+  data: function() {
+    return {
       foo: foo,
       selectedProp: '',
       propertyName: '',
-      propertyValue: undefined };
+      propertyValue: undefined
+    };
   },
   methods: {
-    addProperty: function () {
+    addProperty: function() {
       var _this = this;
       if (!this.propertyName) {
         return;
       }
       var tmp = this.foo;
       var val = this.propertyValue ? JSON.parse(this.propertyValue) : this.propertyValue;
-      this.foo = undefined;
-      ;
-      this.$nextTick(function () {
+      this.foo = undefined;;
+      this.$nextTick(function() {
         _this.foo = __assign({}, tmp, (_a = {}, _a[_this.propertyName] = val !== undefined ? val : 'undefined', _a));
         _this.propertyValue = undefined;
         _this.propertyName = undefined;
         var _a;
       });
     },
-    selectProperty: function (prop) {
+    selectProperty: function(prop) {
       this.selectedProp = prop;
     },
-    removeProperty: function (prop) {
+    removeProperty: function(prop) {
       var _this = this;
       var tmp = this.foo;
       this.foo = undefined;
-      this.$nextTick(function () {
+      this.$nextTick(function() {
         delete tmp[prop];
         _this.foo = tmp;
       });
-    } },
+    }
+  },
 
   computed: {
-    jsonObject: function () {
+    jsonObject: function() {
       return JSON.stringify(this.foo, undefined, 2) || 'undefined';
     },
-    validPropertyName: function () {
+    validPropertyName: function() {
       return this.propertyName || false;
     },
-    validPropertyValue: function () {
+    validPropertyValue: function() {
       if (!this.propertyValue)
-      return true;
+        return true;
       var valid = true;
       try {
         JSON.parse(this.propertyValue);
-      }
-      catch (_error) {
+      } catch (_error) {
         valid = false;
       }
       return valid;
     },
-    canAdd: function () {
+    canAdd: function() {
       return this.validPropertyValue && this.validPropertyName;
-    } } });
+    }
+  }
+});
 
-
+/*
 new Vue({ el: '#app' });
