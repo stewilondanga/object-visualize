@@ -31,14 +31,15 @@ label {
   box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
 }
 
-/*.console {
+.console {
   background-color: #1d1e22;
   min-height: 00px;
   padding: 1em;
   color: #27e127;
   font-family: Consolas;
 }
-.console .console-brand {
+
+/*.console .console-brand {
   color: #595959;
   text-align: right;
   float: right;
