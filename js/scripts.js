@@ -95,32 +95,41 @@ Vue.component('builder-alert', {
   }
 });
 
-/*
+
 Vue.component('property-explorer', {
   template: "\n<div class=\"modal fade\" id=\"modal\" tabindex=\"-1\" role=\"dialog\">\n  <div class=\"modal-dialog\" role=\"document\">\n    <div class=\"modal-content modal-dialog-centered\">\n      <div class=\"container\">\n        <div class=\"row\">\n          <console :text=\"formattedValue\" :hideWatermark=\"true\" class=\"w-100\"></console>\n        </div>\n      </div>\n      <div class=\"p-1 ml-auto\">\n        <button type=\"button\" class=\"btn btn-danger btn-sm\" @click=\"remove\">Remove</button>\n        <button type=\"button\" class=\"btn btn-secondary btn-sm\" data-dismiss=\"modal\" ref=\"dismiss\">Close</button>\n      </div>\n    </div>\n  </div>\n</div>\n",
   props: {
     name: String,
-    value: String },
+    value: String
+  },
 
   computed: {
-    formattedValue: function () {
+    formattedValue: function() {
       var obj = {
         name: this.name,
-        "typeof": typeof this.value };
+        "typeof": typeof this.value
+      };
 
       if (this.value !== null && this.value !== undefined) {
-        obj = __assign({}, obj, { constructor: this.value.constructor.name });
+        obj = __assign({}, obj, {
+          constructor: this.value.constructor.name
+        });
       }
-      return JSON.stringify(__assign({}, obj, { value: this.value }), null, 2);
-    } },
+      return JSON.stringify(__assign({}, obj, {
+        value: this.value
+      }), null, 2);
+    }
+  },
 
   methods: {
-    remove: function () {
+    remove: function() {
       this.$emit('remove', this.name);
       this.$refs.dismiss.click();
-    } } });
+    }
+  }
+});
 
-
+/*
 Vue.component('builder', {
   template: "\n<div>\n  <div class=\"container card builder\">\n    <div class=\"row\">\n      <div class=\"col left\">\n        <label>Add Property:</label>\n        <div class=\"form-inline\">\n          <div class=\"mr-1\">\n            <v-input placeholder=\"Property name\"\n                   v-model=\"propertyName\"/>\n          </div>\n          <div class=\"mr-1\">\n            <v-input placeholder=\"Property value\"\n                   :hasErrors=\"!validPropertyValue\"\n                   v-model=\"propertyValue\"/>\n          </div>\n          <button type=\"button\" class=\"btn btn-info\" @click=\"addProperty\" :disabled=\"!canAdd\"><i class=\"fa fa-plus\"></i></button>\n        </div>\n        <builder-alert class=\"mt-3 mb-2\"\n                       :name=\"propertyName\"\n                       :validName=\"validPropertyName\"\n                       :value=\"propertyValue\"\n                       :validValue=\"validPropertyValue\"></builder-alert>\n        <label>Object properties:</label>\n        <div class=\"row pr-3 pt-1 pl-3\">\n          <div class=\"m-1\" v-for=\"(value, key) in foo\">\n            <button class=\"btn badge badge-secondary p-2\"\n                    data-toggle=\"modal\" data-target=\"#modal\"\n                    @click=\"selectProperty(key)\">{{key}} <i class=\"fa fa-external-link\"></i></button>\n          </div>\n        </div>\n      </div>\n      <div class=\"col console-wrapper\">\n          <console :text=\"jsonObject\" class=\"json-console\"></console>\n      </div>\n    </div>\n  </div>\n  <property-explorer :name=\"selectedProp\" :value=\"foo[selectedProp]\" @remove=\"removeProperty($event)\"></property-explorer>\n</div>",
   data: function () {return {
