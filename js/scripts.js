@@ -62,7 +62,7 @@ Vue.component('console', {
 
   data: function() {
     return {
-      watermark: "Built with codepen <i class=\"fa fa-codepen\"></i>"
+      watermark: "Stewart ilondanga <i class=\"fa fa-github\"></i>"
     };
   },
   computed: {
