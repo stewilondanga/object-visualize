@@ -39,12 +39,13 @@ label {
   font-family: Consolas;
 }
 
-/*.console .console-brand {
+.console .console-brand {
   color: #595959;
   text-align: right;
   float: right;
 }
-.console.json-console {
+
+/*.console.json-console {
   height: 100%;
   color: #cf8e3a;
   overflow: auto;
