@@ -45,12 +45,13 @@ label {
   float: right;
 }
 
-/*.console.json-console {
+.console.json-console {
   height: 100%;
   color: #cf8e3a;
   overflow: auto;
 }
-.builder {
+
+/*.builder {
   min-height: 80vh;
   padding: 1em;
 }
