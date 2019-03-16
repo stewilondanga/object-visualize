@@ -194,5 +194,7 @@ Vue.component('builder', {
   }
 });
 
-/*
-new Vue({ el: '#app' });
+
+new Vue({
+  el: '#app'
+});
