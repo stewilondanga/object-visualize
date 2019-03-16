@@ -56,10 +56,11 @@ label {
   padding: 1em;
 }
 
-/*.builder .left {
+.builder .left {
   border-right: solid 1px lightgray;
 }
-.builder .console-wrapper {
+
+/*.builder .console-wrapper {
   height: calc(80vh - 1em);
 }
 .builder .obj-info {
