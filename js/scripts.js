@@ -37,19 +37,22 @@ var foo = {
 var entityEncode = function(value) {
   return $('<div/>').text(value).html();
 };
-/*Vue.component('v-input', {
+Vue.component('v-input', {
   template: "\n<div>\n    <input type=\"text\"\n            :placeholder=\"placeholder\"\n            class=\"form-control\"\n            :class=\"{'is-valid': (value && isValid), 'is-invalid': !isValid}\"\n            :value=\"value\"\n            @input=\"$emit('input', $event.target.value)\"/>\n</div>\n",
   props: {
     value: String,
     placeholder: String,
-    hasErrors: Boolean },
+    hasErrors: Boolean
+  },
 
   computed: {
-    isValid: function () {
+    isValid: function() {
       return !this.hasErrors;
-    } } });
+    }
+  }
+});
 
-
+/*
 Vue.component('console', {
   template: "\n<div class=\"card console\">\n  <div class=\"console-brand\"><span v-html=\"watermark\" v-if=\"!hideWatermark\"></span></div>\n  <div v-for=\"(line, i) in lines\" class=\"mb-1\">\n    {{line.split(' ').join('&nbsp;')}}\n  </div>\n</div>",
   props: {
