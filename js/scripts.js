@@ -34,10 +34,10 @@ var foo = {
   tags: [1, 2, 3, 4, 5]
 };
 
-/*var entityEncode = function (value) {
+var entityEncode = function(value) {
   return $('<div/>').text(value).html();
 };
-Vue.component('v-input', {
+/*Vue.component('v-input', {
   template: "\n<div>\n    <input type=\"text\"\n            :placeholder=\"placeholder\"\n            class=\"form-control\"\n            :class=\"{'is-valid': (value && isValid), 'is-invalid': !isValid}\"\n            :value=\"value\"\n            @input=\"$emit('input', $event.target.value)\"/>\n</div>\n",
   props: {
     value: String,
