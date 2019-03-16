@@ -21,6 +21,53 @@ body {
   height: 1.5em;
 }
 
+body {
+  background-color: lightgray;
+}
+label {
+  font-weight: bold;
+}
+.card {
+  display: block;
+  border-radius: 2px;
+  min-width: 0;
+  position: relative;
+  text-decoration: none;
+  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+}
+.console {
+  background-color: #1d1e22;
+  min-height: 00px;
+  padding: 1em;
+  color: #27e127;
+  font-family: Consolas;
+}
+.console .console-brand {
+  color: #595959;
+  text-align: right;
+  float: right;
+}
+.console.json-console {
+  height: 100%;
+  color: #cf8e3a;
+  overflow: auto;
+}
+.builder {
+  min-height: 80vh;
+  padding: 1em;
+}
+.builder .left {
+  border-right: solid 1px lightgray;
+}
+.builder .console-wrapper {
+  height: calc(80vh - 1em);
+}
+.builder .obj-info {
+  margin: 0;
+  border-radius: 0;
+}
+
 .containers {
   width: 520px;
   margin: 20px auto;
