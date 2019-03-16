@@ -51,11 +51,12 @@ label {
   overflow: auto;
 }
 
-/*.builder {
+.builder {
   min-height: 80vh;
   padding: 1em;
 }
-.builder .left {
+
+/*.builder .left {
   border-right: solid 1px lightgray;
 }
 .builder .console-wrapper {
