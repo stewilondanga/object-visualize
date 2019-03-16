@@ -72,27 +72,30 @@ Vue.component('console', {
   }
 });
 
-/*
+
 Vue.component('builder-alert', {
   template: "\n<div>\n  <div class=\"alert\" :class=\"isEmpty ? 'alert-info' : isValid ? 'alert-success' : 'alert-danger'\" role=\"alert\">\n    <h5 class=\"alert-heading\">{{ isEmpty ? '' : isValid ? 'Looks Good! \uD83C\uDF89' : 'Oops \uD83D\uDE13' }}</h5>\n    <p v-html=\"message\"></p>\n    <hr v-if=\"!isValid\">\n    <p v-if=\"!isValid\" class=\"mb-0\">Make sure that the <b>property name</b> is <b>not empty</b> and that <b>string values</b> and <b>nested properties</b> names are wrapped in <b>double quotes</b>.</p>\n  </div>\n</div>\n",
   props: {
     name: String,
     validName: Boolean,
     value: String,
-    validValue: Boolean },
+    validValue: Boolean
+  },
 
   computed: {
-    isValid: function () {
+    isValid: function() {
       return !this.isEmpty && this.validName && this.validValue;
     },
-    isEmpty: function () {
+    isEmpty: function() {
       return !this.name || !this.value;
     },
-    message: function () {
+    message: function() {
       return this.isEmpty ? 'Add and validate a new property' : this.isValid ? "Will add <b>{ \"" + entityEncode(this.name) + "\": " + entityEncode(this.value) + " }</b>" : "Looks like something is wrong.";
-    } } });
+    }
+  }
+});
 
-
+/*
 Vue.component('property-explorer', {
   template: "\n<div class=\"modal fade\" id=\"modal\" tabindex=\"-1\" role=\"dialog\">\n  <div class=\"modal-dialog\" role=\"document\">\n    <div class=\"modal-content modal-dialog-centered\">\n      <div class=\"container\">\n        <div class=\"row\">\n          <console :text=\"formattedValue\" :hideWatermark=\"true\" class=\"w-100\"></console>\n        </div>\n      </div>\n      <div class=\"p-1 ml-auto\">\n        <button type=\"button\" class=\"btn btn-danger btn-sm\" @click=\"remove\">Remove</button>\n        <button type=\"button\" class=\"btn btn-secondary btn-sm\" data-dismiss=\"modal\" ref=\"dismiss\">Close</button>\n      </div>\n    </div>\n  </div>\n</div>\n",
   props: {
